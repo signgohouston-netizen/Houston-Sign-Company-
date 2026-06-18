@@ -1,0 +1,11 @@
+# Netlify config for the Sign Go static site.
+# No build step is needed — the site is plain HTML/CSS/JS in this folder.
+
+[build]
+  publish = "."
+
+# Nice-to-have: send visitors to the homepage on any unknown URL.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
