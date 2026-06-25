@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 230" width="760" height="230" role="img" aria-label="Sign Go - The Sign Professionals">
+  <defs>
+    <style>
+      .blk{fill:#33373f}
+      .red{fill:#e8131d}
+      .blue{fill:#1f2d8a}
+      .wht{fill:#ffffff}
+    </style>
+  </defs>
+
+  <!-- Outer hexagon border: blue (left) + red (right) -->
+  <path class="blue" d="M70 8 H400 V222 H70 L8 115 Z"/>
+  <path class="red"  d="M400 8 H690 L752 115 L690 222 H400 Z"/>
+
+  <!-- Inner charcoal badge -->
+  <path class="blk" d="M86 26 H674 L724 115 L674 204 H86 L36 115 Z"/>
+
+  <!-- Blue accent line bottom-left, red accent line bottom-right -->
+  <rect class="blue" x="96" y="176" width="150" height="8" rx="4"/>
+  <rect class="red"  x="514" y="176" width="150" height="8" rx="4"/>
+
+  <!-- Wordmark: SIGN (white, italic) -->
+  <text x="98" y="150" font-family="'Barlow Condensed','Arial Narrow',sans-serif"
+        font-size="132" font-weight="800" font-style="italic" class="wht"
+        letter-spacing="-2">SIGN</text>
+
+  <!-- Wordmark: GO (red, italic) -->
+  <text x="470" y="150" font-family="'Barlow Condensed','Arial Narrow',sans-serif"
+        font-size="132" font-weight="800" font-style="italic" class="red"
+        letter-spacing="-2">G</text>
+
+  <!-- The 'O' as a ring with play button -->
+  <circle cx="648" cy="108" r="46" fill="none" stroke="#e8131d" stroke-width="20"/>
+  <path class="wht" d="M634 88 L672 108 L634 128 Z"/>
+
+  <!-- Red accent slash near S -->
+  <path class="red" d="M104 84 l40 0 -24 36 -40 0 Z"/>
+
+  <!-- Tagline -->
+  <text x="380" y="199" text-anchor="middle"
+        font-family="'Barlow Condensed','Arial Narrow',sans-serif"
+        font-size="30" font-weight="700" class="wht" letter-spacing="4">THE SIGN PROFESSIONALS</text>
+</svg>

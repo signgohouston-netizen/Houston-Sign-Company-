@@ -26,7 +26,6 @@ const menu = [
       { label: 'All Service Areas', href: '/service-areas' },
     ],
   },
-  { label: 'Blog', href: '/blog' },
   { label: 'Reviews', href: '/reviews' },
   { label: 'Contact', href: '/contact-us' },
 ];
