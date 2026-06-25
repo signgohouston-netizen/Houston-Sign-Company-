@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Static HTML export — deploy the `out/` folder to any host (Netlify, Vercel,
-  // GitHub Pages, cPanel, etc.). Run `npm run build` to generate it.
-  output: 'export',
+  // Server mode (Vercel). Pages are still statically pre-rendered where possible;
+  // the /api/chat route runs as a serverless function so the AI assistant can
+  // call Claude securely (the API key stays on the server, never in the browser).
   images: {
-    unoptimized: true, // required for static export
+    unoptimized: true,
     remotePatterns: [{ protocol: 'https', hostname: 'images.unsplash.com' }],
   },
   trailingSlash: true,

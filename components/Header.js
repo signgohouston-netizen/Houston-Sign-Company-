@@ -28,6 +28,7 @@ const menu = [
   },
   { label: 'Blog', href: '/blog' },
   { label: 'Reviews', href: '/reviews' },
+  { label: 'AI Assistant', href: '/assistant' },
   { label: 'Contact', href: '/contact-us' },
 ];
 

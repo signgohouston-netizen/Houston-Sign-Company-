@@ -8,7 +8,7 @@ import { posts } from '@/lib/blog';
 export default function sitemap() {
   const base = site.url;
 
-  const staticPages = ['', '/about', '/led-signs', '/services', '/service-areas', '/blog', '/reviews', '/contact-us'];
+  const staticPages = ['', '/about', '/led-signs', '/services', '/service-areas', '/blog', '/assistant', '/reviews', '/contact-us'];
   const categoryPages = serviceList.map((s) => `/${s.slug}`);
   const productPages = products.map((p) => `/services/${p.slug}`);
   const areaPages = areas.map((a) => `/service-areas/${a.slug}`);

@@ -12,16 +12,21 @@ Built with Next.js (App Router), statically exported.
 ```bash
 npm install      # first time only
 npm run dev      # http://localhost:3000
-npm run build    # static export → ./out
+npm run build    # production build
 ```
+
+The AI Assistant (`/assistant`) needs `ANTHROPIC_API_KEY` set. For local testing,
+copy `.env.example` to `.env.local` and add your key.
 
 ## Deploy
 
 Importing this repo on **Vercel** works out of the box — it auto-detects Next.js
-at the repo root (no Root Directory setting needed). Or run `npm run build` and
-upload the `out/` folder to any static host.
+at the repo root (no Root Directory setting needed). The site runs in server mode
+so the AI Assistant's `/api/chat` route works; set the env vars from `.env.example`
+in Vercel.
 
-See [DEPLOY-AND-SEO.md](DEPLOY-AND-SEO.md) for full deployment + SEO/Google setup.
+See [DEPLOY-AND-SEO.md](DEPLOY-AND-SEO.md) for full deployment + SEO/Google setup,
+including the AI Assistant key.
 
 ## Structure
 

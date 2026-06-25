@@ -1,13 +1,35 @@
 # Deploy Sign Go + Get on Google — Step by Step
 
-This site is a Next.js static export. The whole thing builds to an `out/` folder
-that any host can serve.
+This is a Next.js app deployed on **Vercel** (server mode — the AI Assistant needs
+a serverless function, so it is no longer a static `out/` export).
 
 ```bash
-cd signgo-next
 npm install      # first time only
-npm run build    # creates ./out
+npm run dev      # local preview at http://localhost:3000
+npm run build    # production build
 ```
+
+---
+
+## AI ASSISTANT SETUP (required for the /assistant page to work)
+
+The assistant calls Claude securely from the server, so it needs an API key set
+in Vercel — never in the code.
+
+1. Get an API key at **https://console.anthropic.com** (Billing → add a payment
+   method; usage is pay-as-you-go).
+2. Vercel → your project → **Settings → Environment Variables → Add**:
+   - `ANTHROPIC_API_KEY` = your key  (required)
+   - `SIGNGO_FORMSPREE_ID` = your Formspree form ID  (optional — lets the
+     assistant email leads to you; same form as the contact form)
+3. **Redeploy** (Deployments → ⋯ → Redeploy) so the new variables take effect.
+4. Visit `https://www.houstonsignscompany.com/assistant` and test it.
+
+**Cost:** the assistant uses Claude Opus 4.8 by default (most capable). For a
+lead-capture bot you may prefer a cheaper model — open `lib/assistant.js` and
+change `MODEL` to `'claude-haiku-4-5'` (~5x cheaper) or `'claude-sonnet-4-6'`
+(~3x cheaper), then push. Set a monthly spend limit in the Anthropic console to
+stay in control.
 
 ---
 
