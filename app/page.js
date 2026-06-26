@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import Trust from '@/components/Trust';
 import Services from '@/components/Services';
 import Portfolio from '@/components/Portfolio';
+import NationwideBand from '@/components/NationwideBand';
 import OwnersBand from '@/components/OwnersBand';
 import Process from '@/components/Process';
 import Testimonials from '@/components/Testimonials';
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <Trust />
       <Services />
+      <NationwideBand />
       <Portfolio />
       <OwnersBand />
       <Process />

@@ -364,6 +364,22 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.05;text-transform:upperca
 .owners__media img{width:100%;height:100%;object-fit:cover}
 .owners .checklist li{color:#e7eaef}
 
+/* Nationwide band (dark) */
+.nationwide{background:var(--charcoal);padding:90px 0;border-top:1px solid var(--charcoal-3)}
+.nationwide__grid{display:grid;grid-template-columns:1fr 1.1fr;gap:50px;align-items:center}
+.nationwide__media{display:flex;justify-content:center;align-items:center}
+.nationwide__media img{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.5))}
+.nationwide__text h2{color:#fff;font-size:42px;font-weight:800;margin:6px 0 16px}
+.nationwide__text p{color:var(--gray-light);margin-bottom:16px;font-size:18px}
+.nationwide .checklist li{color:#e7eaef}
+.nationwide__actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+@media(max-width:900px){
+  .nationwide__grid{grid-template-columns:1fr;gap:32px}
+  .nationwide__media{order:-1}
+  .nationwide__media img{max-width:300px}
+  .nationwide__text h2{font-size:32px}
+}
+
 /* Testimonials (dark on home) */
 .home .testi{background:var(--signblack)}
 .home .testi__card{background:var(--charcoal-2);border-color:var(--charcoal-3)}

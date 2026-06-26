@@ -22,6 +22,13 @@ const badges = [
       <svg viewBox="0 0 24 24"><path d="M3 13l2-5h9l3 4h3a1 1 0 011 1v3h-2a2.5 2.5 0 01-5 0H10a2.5 2.5 0 01-5 0H3v-3zm2.5 4a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z" /></svg>
     ),
   },
+  {
+    title: 'Factory-Direct • Ships Nationwide',
+    sub: 'We manufacture in-house & ship anywhere',
+    icon: (
+      <svg viewBox="0 0 24 24"><path d="M2 20V9l5-3v2l4-2v2l4-2v2l4-2v14H2zm4-2h3v-4H6v4zm5 0h3v-4h-3v4z" /></svg>
+    ),
+  },
 ];
 
 export default function Trust() {
