@@ -2,8 +2,10 @@ import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import Process from '@/components/Process';
 import CtaBanner from '@/components/CtaBanner';
+import Faq from '@/components/Faq';
 import { site } from '@/lib/site';
 import { ledBusinessTypes, ledFeatures, ledGallery, ledHeroImg } from '@/lib/led';
+import { ledFaqs } from '@/lib/faqs';
 
 export const metadata = {
   title: 'Full-Color LED Signs & Digital Displays in Houston, TX',
@@ -102,6 +104,7 @@ export default function LedSignsPage() {
       </section>
 
       <Process />
+      <Faq items={ledFaqs} heading="LED Signs — FAQs" />
       <CtaBanner />
     </>
   );

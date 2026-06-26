@@ -2,8 +2,10 @@ import Link from 'next/link';
 import PageHero from './PageHero';
 import Process from './Process';
 import CtaBanner from './CtaBanner';
+import Faq from './Faq';
 import { site } from '@/lib/site';
 import { productsByCategory } from '@/lib/products';
+import { categoryFaqs } from '@/lib/faqs';
 
 // Renders a complete service page from a data object in lib/services.js.
 // The grid of types is generated from the products in this category, and each
@@ -45,6 +47,7 @@ export default function ServicePage({ data }) {
       </section>
 
       <Process />
+      <Faq items={categoryFaqs[data.categoryKey]} heading={`${data.heroTitle} — FAQs`} />
       <CtaBanner />
     </>
   );

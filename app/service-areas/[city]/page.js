@@ -3,10 +3,12 @@ import { notFound } from 'next/navigation';
 import PageHero from '@/components/PageHero';
 import Process from '@/components/Process';
 import CtaBanner from '@/components/CtaBanner';
+import Faq from '@/components/Faq';
 import { site } from '@/lib/site';
 import { areas, getArea, areaIndex } from '@/lib/areas';
 import { categories } from '@/lib/products';
 import { projectPhotos } from '@/lib/gallery';
+import { cityFaqs } from '@/lib/faqs';
 
 export function generateStaticParams() {
   return areas.map((a) => ({ city: a.slug }));
@@ -130,6 +132,7 @@ export default function CityPage({ params }) {
         </div>
       </section>
 
+      <Faq items={cityFaqs(area)} heading={`Signs in ${area.name} — FAQs`} />
       <CtaBanner />
     </>
   );
