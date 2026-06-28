@@ -16,22 +16,6 @@ export default function Footer() {
             <a href="#" aria-label="Facebook"><FacebookIcon /></a>
             <a href="#" aria-label="Instagram"><InstagramIcon /></a>
           </div>
-          {site.googleRating && (
-            <a
-              className="gbadge"
-              href={site.googleReviewsUrl || '/reviews'}
-              {...(site.googleReviewsUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-            >
-              <span className="gbadge__g">G</span>
-              <span className="gbadge__body">
-                <span className="gbadge__top">
-                  <strong>{site.googleRating}</strong>
-                  <span className="gbadge__stars" aria-hidden="true">★★★★★</span>
-                </span>
-                <span className="gbadge__sub">{site.googleReviewCount} Google reviews</span>
-              </span>
-            </a>
-          )}
         </div>
         <div className="footer__col">
           <h4>Services</h4>
@@ -78,7 +62,6 @@ export default function Footer() {
       </div>
       <div className="footer__bottom">
         <div className="container">
-          <p className="footer__trust">BBB Accredited Business · Factory-Direct Manufacturer · Serving Houston since {site.founded}</p>
           <p>&copy; {year} Sign Go — The Sign Professionals. All rights reserved.</p>
         </div>
       </div>

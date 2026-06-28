@@ -402,6 +402,16 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.05;text-transform:upperca
 /* Footer trust line */
 .footer__trust{color:var(--gray-light);font-size:13px;margin-bottom:8px;letter-spacing:.3px}
 
+/* Google rating badge */
+.gbadge{display:inline-flex;align-items:center;gap:12px;margin-top:18px;background:#fff;border-radius:10px;padding:10px 16px;box-shadow:0 6px 18px rgba(0,0,0,.25);transition:transform .15s}
+.gbadge:hover{transform:translateY(-2px)}
+.gbadge__g{font-family:var(--font-head);font-weight:800;font-size:26px;line-height:1;background:conic-gradient(from -45deg,#ea4335,#fbbc05,#34a853,#4285f4,#ea4335);-webkit-background-clip:text;background-clip:text;color:transparent}
+.gbadge__body{display:flex;flex-direction:column;gap:2px}
+.gbadge__top{display:flex;align-items:center;gap:8px}
+.gbadge__top strong{color:#202124;font-size:18px;font-family:var(--font-head)}
+.gbadge__stars{color:#fbbc05;font-size:15px;letter-spacing:1px}
+.gbadge__sub{color:#5f6368;font-size:12px}
+
 /* Clients / trusted-by strip */
 .clients{background:var(--signblack);padding:46px 0;border-bottom:1px solid var(--charcoal-3)}
 .clients__label{text-align:center;color:var(--gray-light);font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
