@@ -1,12 +1,16 @@
 import PageHero from '@/components/PageHero';
+import Credentials from '@/components/Credentials';
 import CtaBanner from '@/components/CtaBanner';
+import { site } from '@/lib/site';
 
 export const metadata = {
   title: 'Reviews & Testimonials',
   description:
-    'See what Houston businesses say about Sign Go — 5-star rated for custom signs, vehicle wraps, and graphics. Design, production & installation done right.',
+    'See what Houston businesses say about Sign Go — a BBB-accredited sign company with 25+ years in business. Custom signs, vehicle wraps, and graphics done right.',
+  alternates: { canonical: '/reviews/' },
 };
 
+// Featured customer reviews. Replace with your real Google review quotes.
 const reviews = [
   { p: 'Sign Go made our new storefront sign look incredible. Great communication and the install was quick and clean.', c: 'Marcus T.', loc: 'Houston' },
   { p: 'They wrapped our entire fleet and the quality is outstanding. Our trucks get noticed everywhere now.', c: 'Priya S.', loc: 'Sugar Land' },
@@ -20,21 +24,56 @@ const reviews = [
 ];
 
 export default function Page() {
+  const heading = site.googleRating
+    ? `Rated ${site.googleRating} Stars on Google`
+    : 'What Houston Businesses Say';
+
+  // AggregateRating schema only when real numbers are provided (no fabrication).
+  const jsonLd =
+    site.googleRating && site.googleReviewCount
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: site.name,
+          url: site.url,
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: site.googleRating,
+            reviewCount: site.googleReviewCount,
+          },
+        }
+      : null;
+
   return (
     <>
+      {jsonLd && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      )}
+
       <PageHero
         title="Reviews & Testimonials"
         sub="What Houston businesses say about working with Sign Go"
         img="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1400&q=80"
       />
 
+      <Credentials />
+
       <section className="reviews">
         <div className="container">
           <div className="section-head">
             <span className="section-head__tag">Our Reputation</span>
-            <h2>Rated 5.0 Stars by Local Businesses</h2>
+            <h2>{heading}</h2>
             <div className="stars" style={{ fontSize: '28px' }}>★★★★★</div>
-            <p>We’re proud of the relationships we’ve built across the Houston area.</p>
+            <p>
+              A BBB-accredited sign company with {site.yearsInBusiness}+ years serving Houston-area
+              businesses. {site.googleReviewsUrl ? '' : 'Find us on Google to read more reviews.'}
+            </p>
+            {site.googleReviewsUrl && (
+              <div className="reviews__actions">
+                <a href={site.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">Read Reviews on Google</a>
+                <a href={site.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--blue">Leave a Review</a>
+              </div>
+            )}
           </div>
 
           <div className="reviews__grid">

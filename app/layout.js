@@ -91,7 +91,17 @@ const jsonLd = {
     closes: '18:00',
   }],
   areaServed: { '@type': 'City', name: 'Houston' },
-  sameAs: [],
+  foundingDate: String(site.founded),
+  sameAs: site.bbbUrl ? [site.bbbUrl] : [],
+  ...(site.googleRating && site.googleReviewCount
+    ? {
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: site.googleRating,
+          reviewCount: site.googleReviewCount,
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({ children }) {

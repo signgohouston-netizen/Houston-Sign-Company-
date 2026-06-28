@@ -1,7 +1,7 @@
 const stats = [
+  { num: '25+', label: 'Years in Business' },
   { num: '60+', label: 'Sign Types We Make' },
   { num: '45+', label: 'Houston-Area Cities Served' },
-  { num: '5.0★', label: 'Customer Rating' },
   { num: '100%', label: 'In-House Production' },
 ];
 

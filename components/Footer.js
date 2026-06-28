@@ -62,6 +62,7 @@ export default function Footer() {
       </div>
       <div className="footer__bottom">
         <div className="container">
+          <p className="footer__trust">BBB Accredited Business · Factory-Direct Manufacturer · Serving Houston since {site.founded}</p>
           <p>&copy; {year} Sign Go — The Sign Professionals. All rights reserved.</p>
         </div>
       </div>

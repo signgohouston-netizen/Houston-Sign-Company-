@@ -43,21 +43,22 @@ export default function About() {
             <span className="section-head__tag">Who We Are</span>
             <h2>Your Complete Houston Sign Company</h2>
             <p>
-              Sign Go is a full-service sign company based at 9900 Wilcrest Dr in Houston, Texas.
-              We help businesses of every size — from local shops and restaurants to schools,
-              churches, and large organizations — stand out with signage that gets noticed.
+              For over 25 years, Sign Go has been a full-service, factory-direct sign company based
+              at 9900 Wilcrest Dr in Houston, Texas. We help businesses of every size — from local
+              shops and restaurants to schools, churches, and large organizations — stand out with
+              signage that gets noticed.
             </p>
             <p>
               We believe a great sign is part craftsmanship and part communication. That’s why we
               take the time to understand your brand and your goals before we ever start designing.
-              From there, our team handles the entire process under one roof: design, fabrication,
+              From there, our team handles the entire process under one roof: design, manufacturing,
               and a clean, professional installation.
             </p>
             <ul className="checklist">
-              <li>Indoor &amp; outdoor signs, wraps, and graphics</li>
+              <li>25+ years in business &amp; BBB accredited</li>
+              <li>Factory-direct manufacturing — no middleman markup</li>
               <li>Experienced in-house design &amp; production team</li>
-              <li>Durable materials built for the Texas climate</li>
-              <li>Serving Houston &amp; the surrounding area</li>
+              <li>Serving Houston locally &amp; shipping nationwide</li>
             </ul>
             <Link href="/contact-us" className="btn btn--primary">Request a Free Consultation</Link>
           </div>
