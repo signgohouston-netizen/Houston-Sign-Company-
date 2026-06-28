@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import Trust from '@/components/Trust';
 import Stats from '@/components/Stats';
+import Clients from '@/components/Clients';
 import Services from '@/components/Services';
 import NationwideBand from '@/components/NationwideBand';
 import Features from '@/components/Features';
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <Trust />
       <Stats />
+      <Clients />
       <Services />
       <NationwideBand />
       <Features />
