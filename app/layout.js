@@ -30,9 +30,14 @@ export const metadata = {
   description:
     "Sign Go is Houston's sign professionals — custom indoor & outdoor signs, channel letters, LED signs, vehicle wraps, vinyl graphics, and banners. Design, production & installation. Call 281-814-1111 for a free quote.",
   keywords: [
-    'Houston sign company', 'custom signs Houston', 'channel letters Houston',
-    'LED signs Houston', 'vehicle wraps Houston', 'storefront signs', 'monument signs',
-    'business signs Houston', 'vinyl graphics', 'sign installation Houston',
+    'sign company Houston', 'sign company near me', 'Houston sign company',
+    'custom signs Houston', 'sign maker Houston', 'sign manufacturer Houston',
+    'factory direct signs', 'channel letters Houston', 'LED signs Houston',
+    'full-color LED signs', 'digital signs Houston', 'monument signs Houston',
+    'pylon signs', 'storefront signs Houston', 'business signs Houston',
+    'vehicle wraps Houston', 'fleet wraps', 'vinyl signs Houston', 'banners Houston',
+    'lobby signs', 'ADA signs', 'sign installation Houston', 'sign company Katy TX',
+    'sign company Cypress TX', 'sign company Sugar Land', 'nationwide sign company',
   ],
   openGraph: {
     type: 'website',

@@ -42,8 +42,19 @@ export default function CityPage({ params }) {
 
   const others = areas.filter((a) => a.slug !== area.slug).slice(0, 12);
 
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${site.url}/service-areas/` },
+      { '@type': 'ListItem', position: 3, name: `${area.name}, TX`, item: `${site.url}/service-areas/${area.slug}/` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <PageHero
         title={`Signs & Wraps in ${area.name}, TX`}
         sub="Design | Production | Installation"

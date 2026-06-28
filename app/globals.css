@@ -380,6 +380,37 @@ h1,h2,h3,h4{font-family:var(--font-head);line-height:1.05;text-transform:upperca
   .nationwide__text h2{font-size:32px}
 }
 
+/* Stats band */
+.stats{background:var(--blue);padding:0}
+.stats__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px 24px}
+.stat{text-align:center}
+.stat strong{display:block;font-family:var(--font-head);font-size:46px;font-weight:800;color:#04121f;line-height:1}
+.stat span{display:block;margin-top:6px;font-size:14px;font-weight:600;color:#0a2540;letter-spacing:.3px}
+
+/* Features ("why choose us") */
+.features{background:var(--signblack);padding:90px 0}
+.features__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.feature{background:var(--charcoal-2);border:1px solid var(--charcoal-3);border-radius:var(--radius);padding:30px 26px;transition:transform .2s,border-color .2s}
+.feature:hover{transform:translateY(-5px);border-color:var(--blue)}
+.feature__icon{display:inline-flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:12px;background:rgba(25,167,255,.12);margin-bottom:16px}
+.feature__icon svg{width:28px;height:28px;fill:var(--blue)}
+.feature h3{color:#fff;font-size:22px;margin-bottom:8px}
+.feature p{color:var(--gray-light);font-size:15px;line-height:1.6}
+
+/* Industries */
+.industries{background:var(--charcoal);padding:90px 0;border-top:1px solid var(--charcoal-3)}
+.industries__grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:900px;margin:0 auto}
+.industry{background:var(--charcoal-2);border:1px solid var(--charcoal-3);border-radius:30px;padding:11px 20px;color:#e7eaef;font-family:var(--font-head);font-weight:600;font-size:16px;letter-spacing:.4px;transition:.15s}
+.industry:hover{border-color:var(--orange);color:#fff}
+@media(max-width:900px){
+  .features__grid{grid-template-columns:repeat(2,1fr)}
+  .stats__grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}
+}
+@media(max-width:560px){
+  .features__grid{grid-template-columns:1fr}
+  .stat strong{font-size:38px}
+}
+
 /* Testimonials (dark on home) */
 .home .testi{background:var(--signblack)}
 .home .testi__card{background:var(--charcoal-2);border-color:var(--charcoal-3)}

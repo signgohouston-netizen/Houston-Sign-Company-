@@ -31,8 +31,19 @@ export default function ProductPage({ params }) {
     .filter((p) => p.slug !== product.slug)
     .slice(0, 6);
 
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.url },
+      { '@type': 'ListItem', position: 2, name: cat.label, item: `${site.url}${cat.parent}/` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${site.url}/services/${product.slug}/` },
+    ],
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <PageHero title={product.name} sub="Design | Production | Installation" img={heroImg} />
 
       <section className="svc-intro">
