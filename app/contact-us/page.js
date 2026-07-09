@@ -2,6 +2,7 @@ import PageHero from '@/components/PageHero';
 import Contact from '@/components/Contact';
 
 export const metadata = {
+  alternates: { canonical: '/contact-us/' },
   title: 'Contact Us — Free Quote',
   description:
     'Contact Sign Go for a free quote on custom signs, wraps, and graphics in Houston. Call 281-814-1111, email Info@signgotx.com, or visit 9900 Wilcrest Dr, Houston, TX 77099.',

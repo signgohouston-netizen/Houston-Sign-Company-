@@ -16,6 +16,8 @@ import CtaBanner from '@/components/CtaBanner';
 import Contact from '@/components/Contact';
 import { homeFaqs } from '@/lib/faqs';
 
+export const metadata = { alternates: { canonical: '/' } };
+
 export default function Home() {
   return (
     <div className="home">

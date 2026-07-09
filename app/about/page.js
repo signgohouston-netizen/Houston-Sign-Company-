@@ -6,6 +6,7 @@ import { bg } from '@/lib/bg';
 import { site } from '@/lib/site';
 
 export const metadata = {
+  alternates: { canonical: '/about/' },
   title: 'About Us — The Sign Professionals in Houston, TX',
   description:
     'Learn about Sign Go — a full-service Houston sign company offering custom signs, vehicle wraps, and graphics. Design, production, and installation done right.',

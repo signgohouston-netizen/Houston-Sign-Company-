@@ -4,6 +4,7 @@ import CtaBanner from '@/components/CtaBanner';
 import { areas } from '@/lib/areas';
 
 export const metadata = {
+  alternates: { canonical: '/service-areas/' },
   title: 'Service Areas — Greater Houston Sign Company',
   description:
     'Sign Go serves Houston and the surrounding area — Katy, Cypress, Sugar Land, Spring, The Woodlands, Pearland, and more. Custom signs, wraps, and graphics.',

@@ -4,6 +4,7 @@ import { services } from '@/lib/services';
 const data = services['exterior-signs'];
 
 export const metadata = {
+  alternates: { canonical: '/exterior-signs/' },
   title: 'Outdoor & Exterior Signs in Houston, TX',
   description:
     'Outdoor signs in Houston — channel letters, monument signs, pylon & pole signs, storefront, cabinet, and illuminated signs. Design, production & installation. Call 281-814-1111.',

@@ -4,6 +4,7 @@ import CtaBanner from '@/components/CtaBanner';
 import { categories, productsByCategory } from '@/lib/products';
 
 export const metadata = {
+  alternates: { canonical: '/services/' },
   title: 'All Sign Services & Products',
   description:
     'Browse every sign type Sign Go offers in Houston — indoor signs, outdoor signs, vehicle wraps, vinyl graphics, custom signs, and trade show displays.',
