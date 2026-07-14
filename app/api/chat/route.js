@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { MODEL, SYSTEM_PROMPT, SEND_TOOL } from '@/lib/assistant';
+import { insertLead } from '@/lib/leads';
 
 // Run as a Node serverless function on Vercel.
 export const runtime = 'nodejs';
@@ -19,25 +20,47 @@ function extractText(message) {
 // Forward a captured lead to the owner via Formspree (same service as the
 // contact form). Set SIGNGO_FORMSPREE_ID in your environment to enable email.
 async function sendLead(input) {
-  const id = process.env.SIGNGO_FORMSPREE_ID;
-  if (!id) return { ok: false, reason: 'not_configured' };
+  const lead = {
+    name: input.name || '',
+    phone: input.phone || '',
+    email: input.email || '',
+    message: input.summary || '',
+    source: 'AI Assistant',
+  };
+
+  // Save to MongoDB (shows up in the admin dashboard).
+  let stored = false;
   try {
-    const res = await fetch(`https://formspree.io/f/${id}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        _subject: `New website chat lead — ${input.name || 'Visitor'}`,
-        name: input.name || '',
-        phone: input.phone || '',
-        email: input.email || '',
-        message: input.summary || '',
-        source: 'AI Assistant (website chat)',
-      }),
-    });
-    return { ok: res.ok };
+    const r = await insertLead(lead);
+    stored = r.ok;
   } catch {
-    return { ok: false, reason: 'error' };
+    /* ignore */
   }
+
+  // Also email via Formspree if configured.
+  let emailed = false;
+  const id = process.env.SIGNGO_FORMSPREE_ID;
+  if (id) {
+    try {
+      const res = await fetch(`https://formspree.io/f/${id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          _subject: `New website chat lead — ${lead.name || 'Visitor'}`,
+          name: lead.name,
+          phone: lead.phone,
+          email: lead.email,
+          message: lead.message,
+          source: lead.source,
+        }),
+      });
+      emailed = res.ok;
+    } catch {
+      /* ignore */
+    }
+  }
+
+  return { ok: stored || emailed, stored, emailed };
 }
 
 // Validate and normalize the messages coming from the browser.

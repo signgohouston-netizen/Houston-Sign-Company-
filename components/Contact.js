@@ -37,24 +37,20 @@ export default function Contact() {
       return;
     }
 
-    // Use Formspree if configured; otherwise fall back to the visitor's email app.
-    if (!site.formspreeId) {
-      mailto(d);
-      setNote({ msg: `Opening your email app… or call us at ${site.phone}.`, ok: true });
-      return;
-    }
-
+    // Save the lead to our backend (MongoDB + optional email notification).
     setSending(true);
     try {
-      const res = await fetch(`https://formspree.io/f/${site.formspreeId}`, {
+      const res = await fetch('/api/lead/', {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: new FormData(form),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...d, source: 'contact form' }),
       });
-      if (!res.ok) throw new Error('bad status');
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) throw new Error('not ok');
       setNote({ msg: "Thank you! Your request has been sent — we'll be in touch shortly.", ok: true });
       form.reset();
     } catch {
+      // Backend not reachable/not yet configured — fall back to the email app.
       mailto(d);
       setNote({ msg: `Opening your email app to send the request… or call ${site.phone}.`, ok: true });
     } finally {
