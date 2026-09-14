@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Logo from './Logo';
-import { site } from '@/lib/site';
+import { site, googleLinks } from '@/lib/site';
 import { areas } from '@/lib/areas';
-import { FacebookIcon, InstagramIcon } from '@/lib/icons';
+import { FacebookIcon, InstagramIcon, GoogleIcon } from '@/lib/icons';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -76,6 +76,48 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+
+      {/* Google reviews + location map */}
+      <div className="container">
+        <div className="footer__google">
+          <div className="footer__google-text">
+            <span className="footer__google-tag">Happy with your sign?</span>
+            <h4>Leave us a review on Google</h4>
+            <p>
+              Your feedback helps other Houston businesses find us — and it only takes a minute.
+              Thank you for choosing Sign Go!
+            </p>
+            <a
+              className="btn btn--light btn--google"
+              href={googleLinks.review}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GoogleIcon /> Review us on Google
+            </a>
+            {site.googleRating && (
+              <p className="footer__google-rating">
+                <span aria-hidden="true">★★★★★</span> {site.googleRating} rating
+                {site.googleReviewCount ? ` · ${site.googleReviewCount} Google reviews` : ''}
+              </p>
+            )}
+          </div>
+          <div className="footer__map">
+            <iframe
+              title="Sign Go location on Google Maps"
+              src={googleLinks.embed}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div className="footer__map-bar">
+              <span>{site.address}</span>
+              <a href={googleLinks.directions} target="_blank" rel="noopener noreferrer">Get directions →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="footer__bottom">
         <div className="container">
           <p className="footer__trust">BBB Accredited Business · Factory-Direct Manufacturer · Serving Houston since {site.founded}</p>
