@@ -1,7 +1,7 @@
 import PageHero from '@/components/PageHero';
 import Credentials from '@/components/Credentials';
 import CtaBanner from '@/components/CtaBanner';
-import { site } from '@/lib/site';
+import { site, googleLinks } from '@/lib/site';
 
 export const metadata = {
   title: 'Reviews & Testimonials',
@@ -71,7 +71,7 @@ export default function Page() {
             {site.googleReviewsUrl && (
               <div className="reviews__actions">
                 <a href={site.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--primary">Read Reviews on Google</a>
-                <a href={site.googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="btn btn--blue">Leave a Review</a>
+                <a href={googleLinks.review} target="_blank" rel="noopener noreferrer" className="btn btn--blue">Leave a Review</a>
               </div>
             )}
           </div>
